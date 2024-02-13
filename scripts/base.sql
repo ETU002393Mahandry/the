@@ -3,6 +3,7 @@ CREATE TABLE the_Variete(
    nom VARCHAR(50) NOT NULL,
    occupation DECIMAL(15,2) NOT NULL,
    rendement DECIMAL(15,2),
+   vente DECIMAL(15,2),
    PRIMARY KEY(idvariete)
 );
 CREATE TABLE the_Parcelle(
@@ -57,6 +58,22 @@ CREATE TABLE the_Cueillette(
    FOREIGN KEY(idcueilleur) REFERENCES the_Cueilleur(idcueilleur),
    FOREIGN KEY(idparcelle) REFERENCES the_Parcelle(idparcelle)
 );
+CREATE TABLE the_Saison(
+   idsaison INT AUTO_INCREMENT,
+   mois INT,
+   selectionner BOOLEAN DEFAULT false,
+   datesaison DATE,
+   PRIMARY KEY(idsaison)
+);
+CREATE TABLE the_Infos(
+   idinfos INT AUTO_INCREMENT,
+   idcueilleur INT,
+   minimal DECIMAL(15,2),
+   bonus DECIMAL(15,2),
+   mallus DECIMAL(15,2),
+   PRIMARY KEY(idinfos),
+   FOREIGN KEY(idcueilleur) REFERENCES the_Cueilleur(idcueilleur)
+);
 
 
 -- Données de test pour la table the_Variete
@@ -107,3 +124,21 @@ INSERT INTO the_Cueillette (datecueillette, idcueilleur, idparcelle, poids) VALU
 ('2023-07-15', 1, 1, 150.2),
 ('2023-07-16', 2, 2, 120.5),
 ('2023-07-17', 3, 3, 180.3);
+
+-- Insérer des données dans la table the_Saison
+INSERT INTO the_Saison (idvariete, mois, datesaison) VALUES
+(1, 1, '2023-01-01'),
+(1, 2, '2023-02-01'),
+(1, 3, '2023-03-01'),
+(2, 1, '2023-01-01'),
+(2, 2, '2023-02-01'),
+(2, 3, '2023-03-01'),
+(3, 1, '2023-01-01'),
+(3, 2, '2023-02-01'),
+(3, 3, '2023-03-01');
+
+-- Insérer des données dans la table the_Infos
+INSERT INTO the_Infos (idcueilleur, minimal, bonus, mallus) VALUES
+(1, 100.00, 5.00, 2.00),
+(2, 120.00, 6.00, 3.00),
+(3, 110.00, 4.00, 1.50);
