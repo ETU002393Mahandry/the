@@ -67,12 +67,10 @@ CREATE TABLE the_Saison(
 );
 CREATE TABLE the_Infos(
    idinfos INT AUTO_INCREMENT,
-   idcueilleur INT,
    minimal DECIMAL(15,2),
-   bonus DECIMAL(15,2),
-   mallus DECIMAL(15,2),
-   PRIMARY KEY(idinfos),
-   FOREIGN KEY(idcueilleur) REFERENCES the_Cueilleur(idcueilleur)
+   bonus DECIMAL(3,2),
+   mallus DECIMAL(3,2),
+   PRIMARY KEY(idinfos)
 );
 
 
