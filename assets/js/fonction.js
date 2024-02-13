@@ -326,7 +326,7 @@ function liste_variete() {
             resultat.innerHTML = ''; // Supprime le contenu précédent
             retour.forEach(function(item) {
                 var row = document.createElement('tr');
-                var keys = ["idvariete", "nom", "occupation", "rendement"];
+                var keys = ["idvariete", "nom", "occupation", "rendement","vente"];
                 keys.forEach(function(key) {
                     var cell = document.createElement('td');
                     cell.textContent = item[key];
