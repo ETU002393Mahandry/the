@@ -67,12 +67,16 @@ CREATE TABLE the_Saison(
 );
 CREATE TABLE the_Infos(
    idinfos INT AUTO_INCREMENT,
-   minimal DECIMAL(15,2),
    bonus DECIMAL(3,2),
    mallus DECIMAL(3,2),
    PRIMARY KEY(idinfos)
 );
-
+CREATE TABLE the_Minimum(
+   idmin INT AUTO_INCREMENT,
+   minimal DECIMAL(15,2),
+   datemin date,
+   PRIMARY KEY(idmin)
+);
 
 -- Données de test pour la table the_Variete
 INSERT INTO the_Variete (nom, occupation, rendement,vente) VALUES 
