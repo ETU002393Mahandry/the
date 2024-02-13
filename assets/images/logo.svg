@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="84px"
+   height="14px"
+   viewBox="0 0 84 14"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="logo.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="16.095238"
+     inkscape:cx="29.884615"
+     inkscape:cy="6.989645"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+  <title
+     id="title1">logo</title>
+  <desc
+     id="desc1">Created with Sketch.</desc>
+  <g
+     id="Symbols"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd">
+    <g
+       id="Header"
+       transform="translate(-27.000000, -16.000000)"
+       fill="#0094FF"
+       fill-rule="nonzero">
+      <g
+         id="logo"
+         transform="translate(27.000000, 16.000000)">
+        <g
+           id="texture-24px">
+          <path
+             d="M6.415,0.125 L0.125,6.415 L0.125,8.41958333 L8.41958333,0.125 L6.415,0.125 Z M0.125,1.54166667 L0.125,2.95833333 L2.95833333,0.125 L1.54166667,0.125 C0.7625,0.125 0.125,0.7625 0.125,1.54166667 Z M11.8195833,0.181666667 L0.181666667,11.8195833 C0.245416667,12.0604167 0.372916667,12.28 0.542916667,12.4570833 C0.72,12.6270833 0.939583333,12.7545833 1.18041667,12.8183333 L12.8254167,1.18041667 C12.6908333,0.691666667 12.3083333,0.309166667 11.8195833,0.181666667 Z M12.875,4.58041667 L4.58041667,12.875 L6.585,12.875 L12.875,6.585 L12.875,4.58041667 Z M12.4570833,12.4570833 C12.7191667,12.2020833 12.875,11.8479167 12.875,11.4583333 L12.875,10.0416667 L10.0416667,12.875 L11.4583333,12.875 C11.8479167,12.875 12.2020833,12.7191667 12.4570833,12.4570833 Z"
+             id="Shape" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.4944px;font-family:Mistral;-inkscape-font-specification:'Mistral, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#0094ff;fill-opacity:1;stroke-width:1.29166;stroke-dasharray:none"
+     x="21.134027"
+     y="13.721598"
+     id="text5"
+     transform="scale(1.1950707,0.83677059)"><tspan
+       id="tspan5"
+       x="21.134027"
+       y="13.721598"
+       sodipodi:role="line"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.4944px;font-family:Mistral;-inkscape-font-specification:'Mistral, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#0094ff;fill-opacity:1;stroke-width:1.29166;stroke-dasharray:none">THELIXIR</tspan></text>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>logo</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thelixir</title>
+    <link rel="stylesheet" href="../assets/vendors/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../assets/vendors/base/vendor.bundle.base.css">
+</head>
+
+<body>
+<header class="landing-header">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light foi-navbar">
+            <a class="navbar-brand" href="login.html">
+                <img src="../assets/images/logo.svg" alt="Thelixir">
+            </a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <button class="btn btn-outline-primary btn-rounded" onclick="montrer('cueilllette_form')"> Cueillettes </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-primary btn-rounded" onclick="montrer('depense_form')"> Depenses </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-primary btn-rounded" onclick="montrer('resultat_table')"> Resultats </button>
+                    </li>
+
+                </ul>
+                <ul class="navbar-nav mt-2 mt-lg-0">
+                    <li class="nav-item mr-2 mb-3 mb-lg-0">
+                        <a class="btn btn-secondary" id="deconnection" >Se deconnecter </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<div id="formulaire">
+    <main class="page-auth py-5 mb-5">
+        <div class="container">
+            <div class="offset-md-3 col-md-6 grid-margin stretch-card">
+                <blockquote class="blockquote blockquote-info">
+                        Choisissez ce que vous voulez faire ci-dessus: inserer des donnees de cueillettes,
+                        ou bien inserer des donnees de couts ou encore voir les resultats globaux?
+                </blockquote>
+            </div>
+        </div>
+    </main>
+
+    <main class="page-auth py-5 mb-5 foi-header landing-header" id="cueilllette_form" hidden="hidden">
+        <div class="container">
+            <div class="offset-md-3 col-md-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Cueillettes</h4>
+                        <p class="card-description">
+                            Inserer les donnees des cueillettes ici!
+                        </p>
+                        <form class="forms-sample" id="form_cueillette">
+                            <div class="form-group">
+                                <label for="datecueillette">Date de la cueillette</label>
+                                <input type="date" class="form-control" id="datecueillette" name="datecueillette" placeholder="Nom">
+                            </div>
+                            <div class="form-group">
+                                <label for="idcueilleur">Ceuilleur</label>
+                                <select id="idcueilleur" class="form-control" name="idcueilleur">
+                                    <option value="1"> John doe </option>
+                                    <option value="2"> Alice Durand </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="idparcelle">Parcelle</label>
+                                <select id="idparcelle" class="form-control" name="idparcelle">
+                                    <option value="1"> 1 </option>
+                                    <option value="2"> 2 </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="poids">Poids (en kg)</label>
+                                <input type="number" step="0.01" class="form-control" name="poids" id="poids" placeholder="Pois (en kg)">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary me-2">Inserer</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <main class="page-auth py-5 mb-5 foi-header landing-header" id="depense_form" hidden="hidden">
+        <div class="container">
+            <div class="offset-md-3 col-md-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Depenses</h4>
+                        <p class="card-description">
+                            Saisissez ici les depenses occasionnes!
+                        </p>
+                        <form class="forms-sample"  id="form_depense">
+                            <div class="form-group">
+                                <label for="iddepense">Categorie de depenses</label>
+                                <select id="iddepense" class="form-control" name="iddepense">
+                                    <option value="1"> Engrais </option>
+                                    <option value="2"> Essence </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="prix">Cout engendre</label>
+                                <input type="number" step="0.01" class="form-control" name="prix" id="prix" placeholder="Cout">
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Date</label>
+                                <input type="date" class="form-control" name="datecout" id="date" placeholder="Date">
+                            </div>
+                            <button type="submit" class="btn btn-primary me-2">Inserer</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <main class="page-auth py-5 mb-5 foi-header landing-header" id="resultat_table" hidden="hidden">
+        <div class="container">
+            <div class="offset-md-1 col-md-10 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-header">
+                        <form class="forms-sample"  id="form_resultat">
+                            <div class="form-group">
+                                <label for="datedebut">De</label>
+                                <input type="date" class="form-control" id="datedebut" name="datedebut" placeholder="Nom">
+                            </div>
+                            <div class="form-group">
+                                <label for="datefin">A</label>
+                                <input type="date" class="form-control" id="datefin" name="datefin" placeholder="Nom">
+                            </div>
+                            <button type="submit" class="btn btn-primary me-2">Afficher</button>
+
+                        </form>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Resultats</h4>
+                        <p class="card-description">
+                            Voici les résultats globaux!
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th> Poids total cueillette </th>
+                                        <th> Poids restants par parcelle </th>
+                                        <th> Cout de revient par kg </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</div>
+
+<footer class="foi-footer text-white">
+    <div class="container">
+        <div class="row footer-content">
+            <div class="col-xl-6 col-lg-7 col-md-8">
+                <h2 class="mb-0">Découvrez l'art du thé avec nous.</h2>
+            </div>
+        </div>
+        <div class="row footer-widget-area">
+            <div class="col-md-3">
+                <div class="py-3">
+                    <img src="../assets/images/logo-white.svg" alt="FOI">
+                </div>
+                <p class="font-os font-weight-semibold mb3">Get our mobile app</p>
+                <div>
+                    <button class="btn btn-app-download mr-2"><img src="../assets/images/ios.svg" alt="App store"></button>
+                    <button class="btn btn-app-download"><img src="../assets/images/android.svg" alt="play store"></button>
+                </div>
+            </div>
+            <div class="col-md-3 mt-3 mt-md-0">
+
+            </div>
+            <div class="col-md-3 mt-3 mt-md-0">
+
+            </div>
+            <div class="col-md-3 mt-3 mt-md-0">
+                <p>
+                    &copy; ETU002393 - Mahandry
+                </p>
+                <p>
+                    &copy; ETU002576 - Tsanta
+                </p>
+                <p>
+                    &copy; ETU002641 - Marcello
+                </p>
+                <p>All rights reserved.</p>
+                <nav class="social-menu">
+                    <a href="#!"><img src="../assets/images/facebook.svg" alt="facebook"></a>
+                    <a href="#!"><img src="../assets/images/instagram.svg" alt="instagram"></a>
+                    <a href="#!"><img src="../assets/images/twitter.svg" alt="twitter"></a>
+                    <a href="#!"><img src="../assets/images/youtube.svg" alt="youtube"></a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="../assets/vendors/jquery/jquery.min.js"></script>
+<script src="../assets/vendors/popper.js/popper.min.js"></script>
+<script src="../assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../assets/js/action.js"></script>
+<script src="../assets/js/fonction.js"></script>
+<script>
+    var dec = document.getElementById("deconnection");
+    document.addEventListener("DOMContentLoaded", function() {
+        var listecuei = document.getElementById("idcueilleur");
+        var listepar = document.getElementById("idparcelle");
+        var listedep = document.getElementById("iddepense");
+        var dec = document.getElementById("deconnection");
+        var forms = document.querySelectorAll('form');
+
+        forms.forEach(function(form) {
+            if (form.id !== "form_resultat") {
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    var formData = new FormData(form);
+                    if (form.id == "form_cueillette") {
+                        var poidscueilli = formData.get('poids');
+                        var xhr = new XMLHttpRequest();
+                        xhr.addEventListener("load", function(event) {
+                            var reste = parseFloat(xhr.responseText);
+                            if (reste !== undefined && poidscueilli <= reste) {
+                                inserer(form);
+                            } else {
+                                alert("Le poids doit être inférieur au reste.");
+                            }
+                        });
+                        xhr.addEventListener("error", function(event) {
+                            alert("Erreur lors de la récupération du reste.");
+                        });
+                        xhr.open("POST", "../functions/reste.php", true);
+                        xhr.send(formData);
+                    }
+                    else{
+                        event.preventDefault();
+                        inserer(form);
+                    }
+                    
+                });
+            }
+            else {
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    resultatGlobal(form);
+                });
+            }
+        });
+        dec.addEventListener('click',function (event) {
+            deconnection();
+        });
+        cueilleurs(listecuei);
+        parcelles(listepar);
+        depenses(listedep);
+
+    });
+
+</script>
+</body>
+
+</html>
