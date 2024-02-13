@@ -66,22 +66,26 @@ CREATE TABLE the_Saison(
 );
 CREATE TABLE the_Infos(
    idinfos INT AUTO_INCREMENT,
-   bonus DECIMAL(3,2),
-   mallus DECIMAL(3,2),
+   bonus DECIMAL(15,2),
+   mallus DECIMAL(15,2),
+   dateinfo date,
    PRIMARY KEY(idinfos)
 );
 CREATE TABLE the_Minimum(
    idmin INT AUTO_INCREMENT,
+   idcueilleur INT,
    minimal DECIMAL(15,2),
-   datemin date,
-   PRIMARY KEY(idmin)
+   dateminimum date,
+   PRIMARY KEY(idmin),
+   FOREIGN KEY(idcueilleur) REFERENCES the_Cueilleur(idcueilleur)
 );
 
+
 -- Données de test pour la table the_Variete
-INSERT INTO the_Variete (nom, occupation, rendement,vente) VALUES 
-('Noir', 10.5, 20.2,15000),
-('Vert', 8.7, 18.3,17500),
-('Cammomille', 12.3, 22.1,27500);
+INSERT INTO the_Variete (nom, occupation, rendement, vente) VALUES 
+('Noir', 10.5, 20.2, 789076),
+('Vert', 8.7, 18.3, 780000),
+('Cammomille', 10.4, 12.3, 700000);
 
 -- Données de test pour la table the_Parcelle
 INSERT INTO the_Parcelle (idvariete, surface) VALUES
@@ -127,19 +131,24 @@ INSERT INTO the_Cueillette (datecueillette, idcueilleur, idparcelle, poids) VALU
 ('2023-07-17', 3, 3, 180.3);
 
 -- Insérer des données dans la table the_Saison
-INSERT INTO the_Saison (mois, datesaison) VALUES
-(1, '2023-01-01'),
-(2, '2023-02-01'),
-(3, '2023-03-01'),
-(1, '2023-01-01'),
-(2, '2023-02-01'),
-(3, '2023-03-01'),
-(1, '2023-01-01'),
-(2, '2023-02-01'),
-(3, '2023-03-01');
+INSERT INTO the_Saison (mois, selectionner) VALUES
+(1, true),
+(2, true),
+(3, false),
+(1, false),
+(2, false),
+(3, true),
+(1, false),
+(2, false),
+(3, true);
 
 -- Insérer des données dans la table the_Infos
-INSERT INTO the_Infos (idcueilleur, minimal, bonus, mallus) VALUES
-(1, 100.00, 5.00, 2.00),
-(2, 120.00, 6.00, 3.00),
-(3, 110.00, 4.00, 1.50);
+INSERT INTO the_Infos (dateinfo, bonus, mallus) VALUES
+('2023-07-10', 51.00, 23.00),
+('2023-07-10', 60.00, 33.00),
+('2023-07-10', 20.00, 10.50);
+
+INSERT INTO the_Minimum(idcueilleur, minimal, dateminimum) VALUES
+(1, 1000.00,'2023-07-10'),
+(2, 1200.00,'2023-07-10'),
+(3, 1100.00, '2023-07-10');

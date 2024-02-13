@@ -95,6 +95,9 @@ function inserer(form) {
     else if (form.id == "form_depense") {
         xhr.open("POST", "../functions/inserer.php?page=the_CoutDepense", true);
     }
+    else if (form.id == "def_objectif") {
+        xhr.open("POST", "../functions/inserer.php?page=the_Infos", true);
+    }
     xhr.send(formData);
 }
 
@@ -104,13 +107,15 @@ function resultatGlobal(form) {
 
     xhr.addEventListener("load", function(event) {
         var tbody = document.querySelector('.table tbody');
-        tbody.innerHTML = ''; // Effacer le contenu précédent de la table
-        alert(xhr.responseText);
+        tbody.innerHTML = ''; 
         var retour = JSON.parse(xhr.responseText);
         if (retour) {
-            var poidsTotal = retour.poidsTotal || '';
-            var poidsRestant = retour.poidsrestant || '';
-            var coutRevient = retour.prixRevient || '';
+            var poidsTotal = retour.poidsTotale || '';
+            var poidsRestant = retour.poidsRestant || '';
+            var totalVente = retour.totalVente || '';
+            var totalDepense = retour.totalDepense || '';
+            var benefice = retour.benefice || '';
+            var coutRevientParKilo = retour.coutRevientParKilo || '';
 
             var newRow = tbody.insertRow();
             
@@ -121,7 +126,16 @@ function resultatGlobal(form) {
             cell2.textContent = poidsRestant;
 
             var cell3 = newRow.insertCell();
-            cell3.textContent = coutRevient;
+            cell3.textContent = totalVente;
+
+            var cell4 = newRow.insertCell();
+            cell4.textContent = totalDepense;
+
+            var cell5 = newRow.insertCell();
+            cell5.textContent = benefice;
+
+            var cell6 = newRow.insertCell();
+            cell6.textContent = coutRevientParKilo;
         } else {
             console.log("Erreur: Aucune donnée retournée");
         }
@@ -134,6 +148,7 @@ function resultatGlobal(form) {
     xhr.open("POST", "../functions/resultat.php", true);
     xhr.send(formData);
 }
+
 function initialise(){
     var xhr = new XMLHttpRequest();
     xhr.addEventListener("load", function(event) {
@@ -144,6 +159,17 @@ function initialise(){
     });
     xhr.open("POST", "../functions/erase.php?page=the_Saison", true); 
     xhr.send();
+}
+
+function supprimerSaison(){
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "../functions/erase.php?page=the_Saison", true);
+    xhr.onreadystatechange = function () {
+        if(xhr.readyState == 4 && xhr.status == 200) {
+            alert("Donnees supprimees avec succes");
+        }
+    };
+    xhr.send;
 }
 
 function modifier(form) {
@@ -663,25 +689,47 @@ function liste_salaires() {
     xhrLoadAchats.send();
 }
 
+function envoyerFormulaire() {
+    var xhr = new XMLHttpRequest();
+    var form = document.getElementById("form_paiement");
+    var formData = new FormData(form);
+    var tableau = document.getElementById('paiement_tab');
+    var resultat = tableau.querySelector('tbody');
+
+    xhr.addEventListener("load", function(event) {
+        var result = JSON.parse(xhr.responseText);
+
+        // Efface le contenu actuel du tableau
+        resultat.innerHTML = '';
+
+        // Vérifie s'il y a des résultats à afficher
+        if (result && result.length > 0) {
+            result.forEach(function(item) {
+                var row = document.createElement('tr');
+
+                // Ajoute les données dans chaque cellule de la ligne
+                row.innerHTML = `
+                    <td>${item.date}</td>
+                    <td>${item.idcueilleur}</td>
+                    <td>${item.poids}kg</td>
+                    <td class="text-success">${item.bonus}<i class="mdi mdi-arrow-up"></i></td>
+                    <td class="text-danger">${item.mallus}<i class="mdi mdi-arrow-down"></i></td>
+                    <td>${item.salaire}</td>
+                `;
+
+                // Ajoute la ligne au tableau
+                resultat.appendChild(row);
+            });
+        }
+    });
+
+    // Envoie la requête POST
+    xhr.open('POST', '../functions/paiement_traitement.php', true);
+    xhr.send(formData);
+}
+
+
 function deconnection(){
     localStorage.removeItem('iduser');
     window.location.href = "login.html";
 }
-// document.addEventListener("DOMContentLoaded", function() {
-//     var listevar = document.getElementById("varietethe");
-//     var listecuei = document.getElementById("idcueilleur");
-//     var dec = document.getElementById("deconnection");
-//     var forms = document.querySelectorAll('form');
-
-//     forms.forEach(function(form) {
-//         form.addEventListener('submit', function(event) {
-//             event.preventDefault();
-//             inserer(form);
-//         });
-//     });
-//     dec.addEventListener('click',function (event) {
-//         deconnection();
-//     });
-//     varietes(listevar);
-//     cueilleurs(listecuei);
-// });
