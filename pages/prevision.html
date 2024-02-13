@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thelixir</title>
+    <link rel="stylesheet" href="../assets/vendors/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../assets/vendors/base/vendor.bundle.base.css">
+</head>
+
+<body>
+    <header class="foi-header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light foi-navbar">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../assets/images/logo.svg" alt="FOI">
+                </a>
+                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+                    </ul>
+                    <ul class="navbar-nav mt-2 mt-lg-0">
+                        <li class="nav-item mr-2 mb-3 mb-lg-0">
+                            <a class="btn btn-secondary" href="login.html">Se connecter </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-auth">
+        <section class="py-5">
+            <div class="container">
+                <div class="col-md-6 offset-md-3 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">A quelle date?</h4>
+                            <p class="card-description">
+                                Affichez les previsions a une date determinee!
+                            </p>
+                            <form class="forms-sample" id="form_prevision">
+                                <div class="form-group">
+                                    <label for="date_prevision">Date de prevision</label>
+                                    <input type="date" class="form-control" id="date_prevision" name="date_prevision">
+                                </div>
+                                <button type="submit" class="btn btn-primary me-2">Afficher</button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="col-md-6 offset-md-3 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Les informations:</h4>
+                            <p class="card-description">
+                                Poids total de the restant:
+                                <span id="poids"></span>
+                            </p>
+                            <p class="card-description">
+                                Montant:
+                                <span id="montant"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container px-4 px-lg-5 mt-5">
+                    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                        <div class="col mb-5">
+                            <div class="card h-100">
+                                <div class="card-header p-4">
+                                    <h5> Plantation 1 </h5>
+                                    <p> 30ha </p>
+                                </div>
+                                <!-- Product image-->
+                                <img class="card-img-top" src="../assets/images/plantation.jpg" alt="..." />
+                                <!-- Product details-->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Product name-->
+                                        <h5 class="fw-bolder">The jasmin</h5>
+                                        <p>nbr de pieds: 62</p>
+                                        <p>Poids restants: 320Kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-5">
+                            <div class="card h-100">
+                                <div class="card-header p-4">
+                                    <h5> Plantation 1 </h5>
+                                    <p> 30ha </p>
+                                </div>
+                                <!-- Product image-->
+                                <img class="card-img-top" src="../assets/images/plantation.jpg" alt="..." />
+                                <!-- Product details-->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Product name-->
+                                        <h5 class="fw-bolder">The jasmin</h5>
+                                        <p>nbr de pieds: 62</p>
+                                        <p>Poids restants: 320Kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-5">
+                            <div class="card h-100">
+                                <div class="card-header p-4">
+                                    <h5> Plantation 1 </h5>
+                                    <p> 30ha </p>
+                                </div>
+                                <!-- Product image-->
+                                <img class="card-img-top" src="../assets/images/plantation.jpg" alt="..." />
+                                <!-- Product details-->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Product name-->
+                                        <h5 class="fw-bolder">The jasmin</h5>
+                                        <p>nbr de pieds: 62</p>
+                                        <p>Poids restants: 320Kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-5">
+                            <div class="card h-100">
+                                <div class="card-header p-4">
+                                    <h5> Plantation 1 </h5>
+                                    <p> 30ha </p>
+                                </div>
+                                <!-- Product image-->
+                                <img class="card-img-top" src="../assets/images/plantation.jpg" alt="..." />
+                                <!-- Product details-->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Product name-->
+                                        <h5 class="fw-bolder">The jasmin</h5>
+                                        <p>nbr de pieds: 62</p>
+                                        <p>Poids restants: 320Kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col mb-5">
+                            <div class="card h-100">
+                                <div class="card-header p-4">
+                                    <h5> Plantation 1 </h5>
+                                    <p> 30ha </p>
+                                </div>
+                                <!-- Product image-->
+                                <img class="card-img-top" src="../assets/images/plantation.jpg" alt="..." />
+                                <!-- Product details-->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Product name-->
+                                        <h5 class="fw-bolder">The jasmin</h5>
+                                        <p>nbr de pieds: 62</p>
+                                        <p>Poids restants: 320Kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="foi-footer text-white">
+        <div class="container">
+            <div class="row footer-content">
+                <div class="col-xl-6 col-lg-7 col-md-8">
+                    <h2 class="mb-0">Découvrez l'art du thé avec nous.</h2>
+                </div>
+            </div>
+            <div class="row footer-widget-area">
+                <div class="col-md-3">
+                    <div class="py-3">
+                        <img src="../assets/images/logo-white.svg" alt="FOI">
+                    </div>
+                    <p class="font-os font-weight-semibold mb3">Get our mobile app</p>
+                    <div>
+                        <button class="btn btn-app-download mr-2"><img src="../assets/images/ios.svg" alt="App store"></button>
+                        <button class="btn btn-app-download"><img src="../assets/images/android.svg" alt="play store"></button>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3 mt-md-0">
+                    <nav>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a href="about.html" class="nav-link">A propos</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-3 mt-3 mt-md-0">
+
+                </div>
+                <div class="col-md-3 mt-3 mt-md-0">
+                    <p>
+                        &copy; ETU002393 - Mahandry
+                    </p>
+                    <p>
+                        &copy; ETU002576 - Tsanta
+                    </p>
+                    <p>
+                        &copy; ETU002641 - Marcello
+                    </p>
+                    <p>All rights reserved.</p>
+                    <nav class="social-menu">
+                        <a href="#!"><img src="../assets/images/facebook.svg" alt="facebook"></a>
+                        <a href="#!"><img src="../assets/images/instagram.svg" alt="instagram"></a>
+                        <a href="#!"><img src="../assets/images/twitter.svg" alt="twitter"></a>
+                        <a href="#!"><img src="../assets/images/youtube.svg" alt="youtube"></a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script>
+    window.addEventListener("DOMContentLoaded",function() {
+        var formulaire = document.getElementById("form_prevision");
+        formulaire.addEventListener("submit",function (event) {
+            do_prevision(formulaire);
+        })
+    })
+</script>
+<script src="../assets/js/fonction.js"></script>
+</body>
+
+</html>

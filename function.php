@@ -208,7 +208,7 @@
            
             $tempDebut = $dates[$i];
             $tempFin = $dates[$i+1];
-            $configuration = "SELECT * FROM the_Saison ORDER BY idsaison DESC limit 12";
+            $configuration = "SELECT * FROM the_Saison ORDER BY mois ASC limit 12";
             $resultatSaison = mysqli_query($bdd, $configuration);
             $donnees=array();
             while($data=mysqli_fetch_assoc($resultatSaison))
@@ -234,6 +234,7 @@
         $poidsRestant = $poidsEspere - $poidsTotalCueilli;
         return $poidsRestant;
     }
+    
 
     
     function hectaresEnMetresCarres($valeur) {
@@ -248,6 +249,7 @@
         $parcelles = recupererDonnees($bdd, "the_Parcelle");
         for ($i=0; $i < count($parcelles); $i++) { 
             $somme = $somme + poidsRestantSurParcelle($bdd, $parcelles[$i]['idparcelle'], $dateDebut, $dateFin);
+            
         }
         return $somme;
     }
@@ -415,7 +417,6 @@
                 $resultat[$i]['bonus']=0;
                 $resultat[$i]['mallus']=0;
             }
-            $resultat[$i]['poids'] = $donnees[$i]['poids'];
             $resultat[$i]['date']=$date;
             $resultat[$i]['idcueilleur']=$idcueilleur;
             $resultat[$i]['salaire']=getSalaireParCueilleur($bdd, $idcueilleur, $date, $date);
@@ -525,8 +526,4 @@
 
         return $resultat;
     }
-    
-
-
-    
 ?>

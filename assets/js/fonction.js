@@ -160,18 +160,6 @@ function initialise(){
     xhr.open("POST", "../functions/erase.php?page=the_Saison", true); 
     xhr.send();
 }
-
-function supprimerSaison(){
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "../functions/erase.php?page=the_Saison", true);
-    xhr.onreadystatechange = function () {
-        if(xhr.readyState == 4 && xhr.status == 200) {
-            alert("Donnees supprimees avec succes");
-        }
-    };
-    xhr.send;
-}
-
 function modifier(form) {
     var formData = new FormData(form);
     var xhr = new XMLHttpRequest();
@@ -732,4 +720,28 @@ function envoyerFormulaire() {
 function deconnection(){
     localStorage.removeItem('iduser');
     window.location.href = "login.html";
+}
+
+function do_prevision(formulaire){
+    var formData = new FormData(formulaire);
+    var xhr = new XMLHttpRequest();
+    var poids = document.getElementById("poids");
+    var montant = document.getElementById("montant");
+    xhr.addEventListener("load", function(event) {
+        alert(xhr.responseText);
+        var retour = JSON.parse(xhr.responseText);
+        if (retour) {
+            poids.innerHTML = retour['restethe'];
+            montant.innerHTML = retour['vente'];
+        } else {
+            console.log("Erreur: Aucune donnée retournée");
+        }
+    });
+
+    xhr.addEventListener("error", function(event) {
+        alert("Erreur de chargement des données");
+    });
+
+    xhr.open("POST", "../functions/global.php", true);
+    xhr.send(formData);
 }

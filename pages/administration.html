@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="../assets/css/special.css">
     <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../assets/vendors/base/vendor.bundle.base.css">
+    <script src="../assets/js/verification.js"></script>
+    <script>
+        verifierUser();
+        verifierAdmin();
+    </script>
 </head>
 
 <body>
@@ -876,7 +881,13 @@
                     </div>
                 </div>
                 <div class="col-md-3 mt-3 mt-md-0">
-
+                    <nav>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a href="about.html" class="nav-link">A propos</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
                 <div class="col-md-3 mt-3 mt-md-0">
 
@@ -917,9 +928,8 @@
 
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
         checkboutton.addEventListener('click',function (event) {
-            //event.preventDefault();
-            //supprimerSaison();
-            /*var tab = [];
+            event.preventDefault();
+            var tab = [];
             checkboxes.forEach(checkbox => {
                 tab['mois'] = checkbox.value;
                 if (checkbox.checked) {
@@ -936,7 +946,8 @@
                 text: 'Insertion de saison reussi',
                 icon: 'succes', 
                 confirmButtonText: 'Ok'
-            });*/
+            });
+            location.reload();
         });
         var listevar = document.getElementById("varietethe");
         var listecuei = document.getElementById("idcueilleur");
