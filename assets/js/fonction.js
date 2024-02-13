@@ -13,8 +13,8 @@ function connect() {
             }
         } catch (error) {
             Swal.fire({
-                title: 'Erreur de connection!',
-                text: error,
+                title: 'Erreur de connection.',
+                text: xhr.responseText,
                 icon: 'warning', 
                 confirmButtonText: 'Ok'
             });
@@ -47,6 +47,21 @@ function signup() {
         alert("Erreur de connexion au serveur");
     });
     xhr.open("POST", "../functions/signup.php", true);
+    xhr.send(formData);
+}
+
+function inserer_mois(table) {
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener("error", function(event) {
+        alert("Erreur de connexion au serveur");
+    });
+    xhr.open("POST", "../functions/inserer.php?page=the_Saison", true);
+    var formData = new FormData();
+    for (var key in table) {
+        if (table.hasOwnProperty(key)) {
+            formData.append(key, table[key]);
+        }
+    }
     xhr.send(formData);
 }
 
@@ -118,6 +133,17 @@ function resultatGlobal(form) {
 
     xhr.open("POST", "../functions/resultat.php", true);
     xhr.send(formData);
+}
+function initialise(){
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener("load", function(event) {
+        location.reload();
+    });
+    xhr.addEventListener("error", function(event) {
+        alert("Erreur de connexion au serveur");
+    });
+    xhr.open("POST", "../functions/erase.php?page=the_Saison", true); 
+    xhr.send();
 }
 
 function modifier(form) {

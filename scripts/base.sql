@@ -62,7 +62,6 @@ CREATE TABLE the_Saison(
    idsaison INT AUTO_INCREMENT,
    mois INT,
    selectionner BOOLEAN DEFAULT false,
-   datesaison DATE,
    PRIMARY KEY(idsaison)
 );
 CREATE TABLE the_Infos(

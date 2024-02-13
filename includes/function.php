@@ -50,7 +50,12 @@
         
     }
     
-
+    function supprimer_def($base,$nomtable){
+        $conditions = array();
+        $requete = "DELETE FROM $nomtable";
+        $result = mysqli_query($base, $requete);
+    }
+    
     function modification($base, $donnees, $nomtable, $condition) {
         $modification = "";
         foreach ($donnees as $colonne => $valeur) {

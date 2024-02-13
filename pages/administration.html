@@ -8,37 +8,56 @@
     <title>Thelixir</title>
     <link rel="stylesheet" href="../assets/vendors/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/special.css">
     <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../assets/vendors/base/vendor.bundle.base.css">
 </head>
 
 <body>
-    <header class="landing-header">
+
+     <header class="landing-header">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light foi-navbar">
                 <a class="navbar-brand" href="../index.html">
-                    <img src="../assets/images/logo.svg" alt="The">
+                    <img src="../assets/images/logo.svg" alt="Thelixir">
                 </a>
                 <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="collapsibleNavId">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <button id="variety" class="btn btn-outline-primary btn-rounded" onclick="tableau('variete')"> Variete de the </button>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle btn btn-primary btn-rounded" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">The</a>
+                            <div class="dropdown-menu" aria-labelledby="pagesMenu">
+                                <button id="variety" class="btn btn-outline-primary btn-block" onclick="tableau('variete')" > Variete de the </button>
+                                <button id="thegen" class="btn btn-outline-primary btn-block" onclick="montrer('regeneration_form')"> Regeneration - the </button>
+                            </div>
                         </li>
+                        <!-- <li class="nav-item">
+                            <button id="variety" class="btn btn-outline-primary btn-rounded"> Variete - the </button>
+                        </li> -->
                         <li class="nav-item">
                             <button id="parcelle" class="btn btn-outline-primary btn-rounded" onclick="tableau('parcelle')"> Parcelle </button>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle btn btn-primary btn-rounded" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Employes</a>
+                            <div class="dropdown-menu" aria-labelledby="pagesMenu">
+                                <button id="cueilleur" class="btn btn-outline-primary btn-block" onclick="tableau('cueilleurs')" > Cueilleurs </button>
+                                <button id="configobj" class="btn btn-outline-primary btn-block" onclick="montrer('objectif_form')"> Objectifs cueilleurs </button>
+                            </div>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <button id="cueilleur" class="btn btn-outline-primary btn-rounded"> Ceuilleurs </button>
+                        </li> -->
                         <li class="nav-item">
-                            <button id="cueilleur" class="btn btn-outline-primary btn-rounded" onclick="tableau('cueilleurs')"> Ceuilleurs </button>
+                            <button id="category" class="btn btn-outline-primary btn-rounded" onclick="tableau('categorie')" > Categorie - depenses </button>
                         </li>
                         <li class="nav-item">
-                            <button id="category" class="btn btn-outline-primary btn-rounded" onclick="tableau('categorie')"> Categorie de depenses </button>
+                            <button id="salaire" class="btn btn-outline-primary btn-rounded" onclick="tableau('salaire')" > Salaire </button>
                         </li>
-                        <li class="nav-item">
-                            <button id="salaire" class="btn btn-outline-primary btn-rounded" onclick="tableau('salaire')"> Salaire </button>
-                        </li>
+                        <!-- <li class="nav-item">
+                            <button id="thegen" class="btn btn-outline-primary btn-rounded"> Regeneration - the </button>
+                        </li> -->
 
                     </ul>
                     <ul class="navbar-nav mt-2 mt-lg-0">
@@ -52,6 +71,60 @@
     </header>
 
     <div id="formulaire">
+        <main class="page-auth py-5 mb-5">
+            <div class="container row">
+                <div class="offset-md-1 col-md-5 grid-margin stretch-card">
+                    <blockquote class="blockquote blockquote-info">
+                        Choisissez ce que vous voulez faire ci-dessus: inserer des donnees de parcelles,
+                        ou bien inserer des categories de depenses ...?
+                    </blockquote>
+                </div>
+
+                <div class="offset-md-1 col-md-5 grid-margin stretch-card">
+                    <div class="slide">
+                        <article class="blog-post media">
+                            <div class="blog-post-thumbnail-wrapper">
+                                <img src="../assets/images/tea1.jpg" alt="blog" width="155px" class="blog-post-thumbnail mr-md-3">
+                            </div>
+                            <div class="media-body">
+                                <p class="blog-post-excerpt">Découvrez une expérience sensorielle incomparable avec notre sélection de thés exquis.
+                                    Plongez dans un monde de saveurs exotiques avec notre thé vert au jasmin,
+                                    éveillant vos sens avec chaque gorgée délicate.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="slide">
+                        <article class="blog-post media">
+                            <div class="blog-post-thumbnail-wrapper">
+                                <img src="../assets/images/tea2.png" alt="blog" width="155px" class="blog-post-thumbnail mr-md-3">
+                            </div>
+                            <div class="media-body">
+                                <p class="blog-post-excerpt">Savourez l'harmonie parfumée de notre thé noir Earl Grey,
+                                    mélange raffiné d'agrumes et de bergamote, offrant une pause réconfortante à tout moment de la journée.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="slide">
+                        <article class="blog-post media">
+                            <div class="blog-post-thumbnail-wrapper">
+                                <img src="../assets/images/tea3.png" alt="blog" width="155px" class="blog-post-thumbnail mr-md-3">
+                            </div>
+                            <div class="media-body">
+                                <p class="blog-post-excerpt">Laissez-vous transporter vers des contrées lointaines avec notre thé oolong à la pêche,
+                                    alliant la douceur fruitée à une subtile note florale.
+                                    Plaisir et évasion vous attendent dans chaque tasse. Découvrez nos thés aujourd'hui et
+                                    éveillez vos papilles à de nouvelles sensations.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="slide">
+
+                    </div>
+                </div>
+            </div>
+
+
+        </main>
     <main class="page-auth py-5 mb-5 foi-header landing-header" id="variete_form" hidden="hidden">
         <div class="container">
             <div class="offset-md-1 col-md-10 grid-margin stretch-card" id="variete_table" hidden="hidden">
@@ -718,7 +791,72 @@
         </div>
     </main>
     </div>
+    <main class="page-auth py-5 mb-5 foi-header landing-header" id="regeneration_form" hidden="hidden">
+        <div class="container">
+            <div class="offset-md-1 col-md-10 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Regeneration periodique de the</h4>
+                        <p class="card-description">Configurer ici les saisons ou les thes se regenerent!</p>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6" id="here">
 
+                                </div>
+                                <script>
+                                    let mois = ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet","Aout", "Septembre", "Octobre", "Novembre", "Decembre"];
+                                    let check = "";
+                                    for (let i = 1; i <= 12 ; i++) {
+                                        let suite = "<div class=\"form-group\">\n" +
+                                            "                                            <div class=\"form-check\">\n" +
+                                            "                                                <label class=\"form-check-label\">\n" +
+                                            "                                                    <input type=\"checkbox\" class=\"form-check-input\" value=\"" + i + "\">\n" +
+                                                                                                mois[i - 1] +
+                                            "                                                    <i class=\"input-helper\"></i></label>\n" +
+                                            "                                            </div>\n" +
+                                            "                                        </div>";
+                                        check += suite;
+                                    }
+                                    document.getElementById("here").innerHTML = check;
+                                </script>
+                            </div>
+                        </form>
+                        <button type="submit" class="btn btn-primary me-2" id="check">Valider</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <main class="page-auth py-5 mb-5 foi-header landing-header" id="objectif_form" hidden="hidden">
+        <div class="container">
+            <div class="offset-md-1 col-md-10 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Configuration des objectifs</h4>
+                        <p class="card-description">
+                            Configurez ici les objectifs des cueilleurs!
+                        </p>
+                        <form class="forms-sample" id="def_objectif">
+                            <div class="form-group">
+                                <label for="date_objectif">Date</label>
+                                <input type="date" id="date_objectif" class="form-control" name="date_objectif">
+                            </div>
+                            <div class="form-group">
+                                <label for="bonus">% bonus</label>
+                                <input type="number" step="0.01" id="bonus" class="form-control" name="bonus">
+                            </div>
+                            <div class="form-group">
+                                <label for="malus">% malus</label>
+                                <input type="number" step="0.01" id="malus" class="form-control" name="malus">
+                            </div>
+                            <button type="submit" class="btn btn-primary me-2">Valider</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
     <footer class="foi-footer text-white">
         <div class="container">
             <div class="row footer-content">
@@ -769,6 +907,27 @@
     <script src="../assets/js/sweetalert2.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+        var checkboutton = document.getElementById("check");
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboutton.addEventListener('click',function (event) {
+            var tab = [];
+            checkboxes.forEach(checkbox => {
+                tab['mois'] = checkbox.value;
+                if (checkbox.checked) {
+                    tab['selectionner'] = 1;
+                }
+                else{
+                    tab['selectionner'] = 0;
+                }
+                inserer_mois(tab);
+            });
+            Swal.fire({
+                title: 'Insertion reussi!',
+                text: 'Insertion de saison reussi',
+                icon: 'succes', 
+                confirmButtonText: 'Ok'
+            });
+        });
         var listevar = document.getElementById("varietethe");
         var listecuei = document.getElementById("idcueilleur");
         var dec = document.getElementById("deconnection");

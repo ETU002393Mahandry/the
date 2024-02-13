@@ -8,13 +8,14 @@
     <title>Thelixir</title>
     <link rel="stylesheet" href="../assets/vendors/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/special.css">
     <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../assets/vendors/base/vendor.bundle.base.css">
 </head>
 
 <body>
 <header class="landing-header">
-    <div class="container">
+    <div class="container" >
         <nav class="navbar navbar-expand-lg navbar-light foi-navbar">
             <a class="navbar-brand" href="login.html">
                 <img src="../assets/images/logo.svg" alt="Thelixir">
@@ -33,7 +34,9 @@
                     <li class="nav-item">
                         <button class="btn btn-outline-primary btn-rounded" onclick="montrer('resultat_table')"> Resultats </button>
                     </li>
-
+                    <li class="nav-item">
+                        <button class="btn btn-outline-primary btn-rounded" onclick="montrer('resume_paiement')"> Paiements </button>
+                    </li>
                 </ul>
                 <ul class="navbar-nav mt-2 mt-lg-0">
                     <li class="nav-item mr-2 mb-3 mb-lg-0">
@@ -45,18 +48,61 @@
     </div>
 </header>
 
-<div id="formulaire">
+<div id="formulaire" class="row">
     <main class="page-auth py-5 mb-5">
-        <div class="container">
-            <div class="offset-md-3 col-md-6 grid-margin stretch-card">
+        <div class="container row">
+            <div class="offset-md-1 col-md-5 grid-margin stretch-card">
                 <blockquote class="blockquote blockquote-info">
                         Choisissez ce que vous voulez faire ci-dessus: inserer des donnees de cueillettes,
                         ou bien inserer des donnees de couts ou encore voir les resultats globaux?
                 </blockquote>
             </div>
-        </div>
-    </main>
 
+            <div class="offset-md-1 col-md-5 grid-margin stretch-card">
+                <div class="slide">
+                    <article class="blog-post media">
+                        <div class="blog-post-thumbnail-wrapper">
+                            <img src="../assets/images/tea1.jpg" alt="blog" width="155px" class="blog-post-thumbnail mr-md-3">
+                        </div>
+                        <div class="media-body">
+                            <p class="blog-post-excerpt">Découvrez une expérience sensorielle incomparable avec notre sélection de thés exquis.
+                                Plongez dans un monde de saveurs exotiques avec notre thé vert au jasmin,
+                                éveillant vos sens avec chaque gorgée délicate.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="slide">
+                    <article class="blog-post media">
+                        <div class="blog-post-thumbnail-wrapper">
+                            <img src="../assets/images/tea2.png" alt="blog" width="155px" class="blog-post-thumbnail mr-md-3">
+                        </div>
+                        <div class="media-body">
+                            <p class="blog-post-excerpt">Savourez l'harmonie parfumée de notre thé noir Earl Grey,
+                                mélange raffiné d'agrumes et de bergamote, offrant une pause réconfortante à tout moment de la journée.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="slide">
+                    <article class="blog-post media">
+                        <div class="blog-post-thumbnail-wrapper">
+                            <img src="../assets/images/tea3.png" alt="blog" width="155px" class="blog-post-thumbnail mr-md-3">
+                        </div>
+                        <div class="media-body">
+                            <p class="blog-post-excerpt">Laissez-vous transporter vers des contrées lointaines avec notre thé oolong à la pêche,
+                                alliant la douceur fruitée à une subtile note florale.
+                                Plaisir et évasion vous attendent dans chaque tasse. Découvrez nos thés aujourd'hui et
+                                éveillez vos papilles à de nouvelles sensations.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="slide">
+
+                </div>
+            </div>
+        </div>
+
+
+    </main>
     <main class="page-auth py-5 mb-5 foi-header landing-header" id="cueilllette_form" hidden="hidden">
         <div class="container">
             <div class="offset-md-3 col-md-6 grid-margin stretch-card">
@@ -190,7 +236,67 @@
             </div>
         </div>
     </main>
+    <main class="page-auth py-5 mb-5 foi-header landing-header" id="resume_paiement" hidden="hidden">
+        <div class="container">
+            <div class="offset-md-1 col-md-10 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-header">
+                        <form class="forms-sample">
+                            <div class="form-group">
+                                <label for="datedebut_paiement">De</label>
+                                <input type="date" class="form-control" id="datedebut_paiement" name="datedebut_paiement" placeholder="Nom">
+                            </div>
+                            <div class="form-group">
+                                <label for="datefin_paiement">A</label>
+                                <input type="date" class="form-control" id="datefin_paiement" name="datefin_paiement" placeholder="Nom">
+                            </div>
+                            <button type="submit" class="btn btn-primary me-2">Afficher</button>
 
+                        </form>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Paiements des cueilleurs </h4>
+                        <p class="card-description">
+                            Voici le resume des paiements aupres des cueilleurs!
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                <tr>
+                                    <th> Date </th>
+                                    <th> Nom cueilleur </th>
+                                    <th> Poids </th>
+                                    <th> % bonus </th>
+                                    <th> % malus </th>
+                                    <th> Montant paiement </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td> 30-12-2023 </td>
+                                    <td> John Doe </td>
+                                    <td> 50kg </td>
+                                    <td class="text-success"> 0 <i class="mdi mdi-arrow-up"></i></td>
+                                    <td class="text-danger"> 28.00% <i class="mdi mdi-arrow-down"></i></td>
+                                    <td> 150 000</td>
+                                </tr>
+                                <tr>
+                                    <td> 15-01-2024 </td>
+                                    <td> Alice Martinez </td>
+                                    <td> 50Kg </td>
+                                    <td class="text-success"> 82.00% <i class="mdi mdi-arrow-up"></i></td>
+                                    <td class="text-danger"> 0<i class="mdi mdi-arrow-down"></i></td>
+                                    <td> 200 000 </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </div>
 
 <footer class="foi-footer text-white">
